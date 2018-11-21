@@ -7,16 +7,21 @@
 
 using namespace std;
 
-
+struct stationNode {
+	int id;
+	string name;
+	vector<stationNode*> neighbor;
+	vector<int> depart;					// the index of the vector is the station
+	vector<int> arrive; 				// the index of the vector is the station
+};
 
 int main(int argc, char** argv)
 {
         std::ifstream input;
         std::ifstream scheduleInput;
         int cmd, argument;
-        string station;
-        vector<int> stationList;
-        vector<string> stationNames;
+        string stationName;
+        vector<stationNode*> stations;
 
         if (argc < 3)
         {
@@ -30,19 +35,20 @@ int main(int argc, char** argv)
         {
 
                 input >> argument;
-                input >> station;
+                input >> stationName;
                 if (input.eof() ) break;
-                stationList.push_back(argument);
-                stationNames.push_back(station);
+				stations[argument] = new stationNode;
+				stations[argument]->id = argument;
+				stations[argument]->name = stationName;
 
         }
 
         // print test
         
-        for (int i = 0; i < stationList.size(); i++)
+        for (int i = 0; i < stations.size(); i++)
         {
-                std::cout << "Station id: " << stationList[i] << " Station Name: " 
-                        << stationNames[i] << std::endl;
+                std::cout << "Station id: " << stations[i]->id << " Station Name: " 
+                        << stations[i]->name << std::endl;
         }
 
         input.close();
@@ -50,17 +56,17 @@ int main(int argc, char** argv)
 
 
 
-        int V = stationList.size();
-        vector< list< pair<int, int> > > adjacencyList(V+1);
+//        int V = stationList.size();
+ //       vector< list< pair<int, int> > > adjacencyList(V+1);
 
 
 
 
 //        scheduleInput.open(argv[2]);
         int src, dst, leave, arrive, weight;
+/*
 
-
- /*       while (true)
+        while (true)
         {
                 input >> src;
                 input >> dst;
@@ -72,7 +78,7 @@ int main(int argc, char** argv)
 
 
         }
-        scheduleInput.close();*/
+        scheduleInput.close();
 
         cout << endl << endl;
         // another print test
@@ -105,7 +111,7 @@ int main(int argc, char** argv)
                 cout << endl;
         }
 
-
+*/
 
 
 
