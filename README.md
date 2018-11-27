@@ -9,5 +9,5 @@ Todo:
 
 
 The program outputing correctly from a test
-![Trains Output](https://flic.kr/p/2arkyCS "Trains")
+![correct trains output](https://user-images.githubusercontent.com/22360673/49109925-a63ba680-f251-11e8-9023-8c0b4570dda7.PNG)
 
