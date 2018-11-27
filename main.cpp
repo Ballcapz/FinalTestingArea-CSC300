@@ -56,28 +56,28 @@ int main(int argc, char** argv)
 
 
 
-//        scheduleInput.open(argv[2]);
+        scheduleInput.open(argv[2]);
         int src, dst, leave, arrive, weight;
 
 
- /*       while (true)
+       while (true)
         {
-                input >> src;
-                input >> dst;
-                input >> leave;
-                input >> arrive;
-                if (input.eof() ) break;
+                scheduleInput >> src;
+                scheduleInput >> dst;
+                scheduleInput >> leave;
+                scheduleInput >> arrive;
+                if (scheduleInput.eof() ) break;
                 weight = arrive - leave; 
                 adjacencyList[src].push_back(make_pair(dst, weight));
 
 
         }
-        scheduleInput.close();*/
+        scheduleInput.close();
 
         cout << endl << endl;
         // another print test
 
-
+/*
         // print adjacency list
         adjacencyList[1].push_back(make_pair(2, 300));
         adjacencyList[1].push_back(make_pair(4, 300));
@@ -88,7 +88,7 @@ int main(int argc, char** argv)
         adjacencyList[4].push_back(make_pair(1, 550));
         adjacencyList[4].push_back(make_pair(3, 400));
 
-        
+ */       
         cout << "\nThe Adjacency List-\n";
 
         for (int i = 1; i < adjacencyList.size(); ++i)
