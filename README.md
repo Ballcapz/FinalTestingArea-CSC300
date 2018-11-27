@@ -9,5 +9,5 @@ Todo:
 
 
 The program outputing correctly from a test
-![Alt text](https://flic.kr/p/2arkyCS "Trains")
+![Trains Output](https://flic.kr/p/2arkyCS "Trains")
 
