@@ -51,7 +51,13 @@ int main(int argc, char** argv)
 
 
         int V = stationList.size();
+        // the og station is the source, p(0) is the destination station
+        // p(1) is the weight of the distance between the stations
         vector< list< pair<int, int> > > adjacencyList(V+1);
+        // p(1) is the time the train leaves from s1 going to s2 which is held in p(0)
+        vector< list< pair<int, int> > > leaveTime(V+1);
+        // p(1) is the time the train arrives at s2
+        vector< list< pair<int, int> > > arriveTime(V+1);
 
 
 
@@ -69,6 +75,8 @@ int main(int argc, char** argv)
                 if (scheduleInput.eof() ) break;
                 weight = arrive - leave; 
                 adjacencyList[src].push_back(make_pair(dst, weight));
+                leaveTime[src].push_back(make_pair(dst, leave));
+                arriveTime[src].push_back(make_pair(dst, arrive));
 
 
         }
@@ -89,7 +97,7 @@ int main(int argc, char** argv)
         adjacencyList[4].push_back(make_pair(3, 400));
 
  */       
-        cout << "\nThe Adjacency List-\n";
+        cout << "\nThe Adjacency List of Stations(time it takes between)-\n";
 
         for (int i = 1; i < adjacencyList.size(); ++i)
         {
@@ -106,7 +114,37 @@ int main(int argc, char** argv)
         }
 
 
+        cout << "\nThe Adjacency List of Stations(time it leaves)-\n";
 
+        for (int i = 1; i < leaveTime.size(); ++i)
+        {
+                cout << "leaveTime[" << i << "]";
+
+                list< pair<int, int> >::iterator itr = leaveTime[i].begin();
+
+                while(itr != leaveTime[i].end())
+                {
+                        cout << "->" << (*itr).first << "(" << (*itr).second << ")";
+                        ++itr;
+                }
+                cout << endl;
+        }
+
+        cout << "\nThe Adjacency List of Stations(time it arrives)-\n";
+
+        for (int i = 1; i < arriveTime.size(); ++i)
+        {
+                cout << "arriveTime[" << i << "]";
+
+                list< pair<int, int> >::iterator itr = arriveTime[i].begin();
+
+                while(itr != arriveTime[i].end())
+                {
+                        cout << "->" << (*itr).first << "(" << (*itr).second << ")";
+                        ++itr;
+                }
+                cout << endl;
+        }
 
 
 
