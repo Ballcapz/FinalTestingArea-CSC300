@@ -7,7 +7,7 @@
 
 using namespace std;
 
-
+void printCompleteSchedule();
 
 int main(int argc, char** argv)
 {
@@ -83,20 +83,7 @@ int main(int argc, char** argv)
         scheduleInput.close();
 
         cout << endl << endl;
-        // another print test
-
-/*
-        // print adjacency list
-        adjacencyList[1].push_back(make_pair(2, 300));
-        adjacencyList[1].push_back(make_pair(4, 300));
-        adjacencyList[2].push_back(make_pair(3, 550));
-        adjacencyList[2].push_back(make_pair(4, 400));
-        adjacencyList[3].push_back(make_pair(4, 300));
-        adjacencyList[3].push_back(make_pair(1, 300));
-        adjacencyList[4].push_back(make_pair(1, 550));
-        adjacencyList[4].push_back(make_pair(3, 400));
-
- */       
+        
         cout << "\nThe Adjacency List of Stations(time it takes between)-\n";
 
         for (int i = 1; i < adjacencyList.size(); ++i)
@@ -154,6 +141,29 @@ int main(int argc, char** argv)
         return 0;
 
 }
+
+
+void printCompleteSchedule()
+{
+     cout << "The complete schedule\n";   
+        
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
